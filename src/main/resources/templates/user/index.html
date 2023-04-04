@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Employee List</title>
 </head>
+
 <body>
+
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Logout</button>
+        <a th:href="@{/deleteUser/{userId}(userId=${user.userId})}">Delete Your Account</a>
+    </form>
+
     <h1>Employee List</h1>
     <table>
         <thead>
@@ -27,6 +35,11 @@
             </tr>
         </tbody>
     </table>
+
+
+
     <a th:href="@{/new}">Add New Employee</a>
+
 </body>
+
 </html>
