@@ -2,9 +2,31 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>index Page</title>
+    <title>Employee List</title>
 </head>
 <body>
-    <h1>Login Working</h1>
+    <h1>Employee List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="employee : ${employees}">
+                <td th:text="${employee.id}"></td>
+                <td th:text="${employee.name}"></td>
+                <td th:text="${employee.email}"></td>
+                <td>
+                    <a th:href="@{/edit/{id}(id=${employee.id})}">Edit</a> |
+                    <a th:href="@{/delete/{id}(id=${employee.id})}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/new}">Add New Employee</a>
 </body>
 </html>

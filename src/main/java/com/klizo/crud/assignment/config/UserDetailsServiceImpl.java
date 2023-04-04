@@ -21,6 +21,8 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 		User user = userRepo.findByUserName(username);
 		if(user != null) {
 			return new CustomUser(user);
+		} else {
+			System.out.print("UserName or Password not valid!");
 		}
 			
 		throw new UsernameNotFoundException("user not found!");
