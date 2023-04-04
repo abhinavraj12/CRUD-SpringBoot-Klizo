@@ -7,5 +7,5 @@ import com.klizo.crud.assignment.model.User;
 
 @Repository
 public interface UserRepo extends JpaRepository<User, Long> {
-	//User findByUsername(String userName);
+
 }
