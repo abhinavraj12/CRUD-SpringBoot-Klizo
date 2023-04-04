@@ -37,7 +37,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		
 		auth.authenticationProvider(getDaoAuthenticationProvider());
 	}
-	
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {

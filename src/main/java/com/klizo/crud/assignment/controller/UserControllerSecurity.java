@@ -22,17 +22,14 @@ public class UserControllerSecurity {
 	
 	@ModelAttribute
 	private void userDetails(Model m, Principal p) {
-		String userName = p.getName();
-		User user = userRepo.findByUserName(userName);
+		String username = p.getName();
+		User user = userRepo.findByUserName(username);
 		m.addAttribute("user", user);
-		
 	}
 	
 	@GetMapping("/index")
 	public String index() {
 		return "user/index";
 	}
-	
-	 
-	
+
 }
