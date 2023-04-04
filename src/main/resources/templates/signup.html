@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Signup</h1>
-    <form action="#" th:action="@{/signup}" method="post" th:object="${user}">
+    <form action="#" th:action="@{/createUser}" method="post" th:object="${user}">
        
         <label for="firstName">First Name:</label>
         <input type="text" id="firstName" name="firstName" required>
@@ -22,6 +22,6 @@
         <br><br>
         <button type="submit">Signup</button>
     </form>
-    <p>Already have an account? <a href="/login">Login</a></p>
+    <p>Already have an account? <a href="/signin">Login</a></p>
 </body>
 </html>

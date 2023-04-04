@@ -23,7 +23,25 @@ public class User {
 	@Column(nullable = false)
 	private String password;
 	
+	@Column(name = "enabled")
+	private Boolean enabled = true;
 	
+	private String role;
+	
+	
+	
+	public Boolean getEnabled() {
+		return enabled;
+	}
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
 	public Long getUserId() {
 		return userId;
 	}
@@ -57,18 +75,21 @@ public class User {
 	public User() {
 		super();
 	}
-	public User(Long userId, String firstName, String lastName, String userName, String password) {
+	public User(Long userId, String firstName, String lastName, String userName, String password, Boolean enabled,
+			String role) {
 		super();
 		this.userId = userId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.userName = userName;
 		this.password = password;
+		this.enabled = enabled;
+		this.role = role;
 	}
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", userName="
-				+ userName + ", password=" + password + "]";
+				+ userName + ", password=" + password + ", enabled=" + enabled + ", role=" + role + "]";
 	}
 	
 }
