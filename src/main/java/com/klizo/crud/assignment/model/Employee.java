@@ -4,8 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+
 
 @Entity
 public class Employee {
@@ -14,11 +13,11 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotBlank(message = "Name is mandatory")
+    //@NotBlank(message = "Name is mandatory")
     private String name;
 
-    @NotBlank(message = "Email is mandatory")
-    @Email(message = "Email is invalid")
+   // @NotBlank(message = "Email is mandatory")
+    //@Email(message = "Email is invalid")
     private String email;
 
 	public Long getId() {
@@ -50,13 +49,7 @@ public class Employee {
 		return "Employee [id=" + id + ", name=" + name + ", email=" + email + "]";
 	}
 
-	public Employee(Long id, @NotBlank(message = "Name is mandatory") String name,
-			@NotBlank(message = "Email is mandatory") @Email(message = "Email is invalid") String email) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.email = email;
-	}
+	
 
 	public Employee() {
 		super();
